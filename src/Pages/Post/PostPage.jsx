@@ -20,7 +20,7 @@ function postApost(event) {
 
     return (
         <div>
-        <form  noValidate autoComplete="off">
+        <form  noValidate autoComplete="off" onSubmit={postApost}>
 
           <Inputs
           id="outlined-size-normal"

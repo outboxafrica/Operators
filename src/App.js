@@ -11,9 +11,9 @@ function App() {
       <Router>
       <Switch>
       <Route exact path="/lookBook" component={LookBook}/>
-      <Route exact path="/" component={General}/>
       <Route exact path="/post" component={Post}/>
          <Route exact path="/profileHome" component={ProfileHome}/>
+      <Route exact path="/" component={General}/>
        </Switch>
     </Router>
     </div>

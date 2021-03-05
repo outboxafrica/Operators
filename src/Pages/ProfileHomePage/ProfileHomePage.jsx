@@ -11,10 +11,12 @@ function ProfileHomePage() {
         .onSnapshot(snapshot =>{
           setPosts(snapshot.docs.map(doc => ({
             id:doc.id,
-            post:doc.data()
+            post:doc.data(),
+            // comment2:doc.data(),
            })));
-        })
-       },[]);
+          })
+        },[]);
+        // console.log(posts);
     return (
         <div>
             {/* <h1>all questions</h1> */}

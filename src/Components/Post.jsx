@@ -5,6 +5,7 @@ import { db } from "../Firebase/firebase";
 function Post(props) {
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
+  const [comment2, setComment2] = useState("");
 
   useEffect(() => {
     let unsubscribe;
@@ -19,6 +20,7 @@ function Post(props) {
           setComments(snapshot.docs.map((doc) => doc.data()));
         });
     }
+
     return () => {
       unsubscribe();
     };
@@ -40,22 +42,27 @@ function Post(props) {
 
   return (
     <div>
+        {console.log(comment2)}
       <p>{props.question}</p>
       <div className="post_comments">
         {typeof comments != "undefined" ?
         comments.map((comment) => (
-          <p>
+            <div key={props.postId}  className="comment">
+          <p className="comment1">
             <strong>{comment.username}: </strong>
             {comment.text}
           </p>
+          </div>
         )):""
     }
     <form className="post_commentBox">
                 <input type="text" className="post_input" placeholder="Add a comment" value={comment} onChange={(e) => setComment(e.target.value)}/>
 
-                <button disabled={!comment}  className="post_button" type="submit" onClick={postComment}>Post</button>
+                <button disabled={!comment}  className="post_button" type="submit" onClick={postComment}>comment</button>
             </form>
       </div>
+      <button  onClick={event=>db.collection('posts').doc(props.postId).delete()}>delete post</button>
+
     </div>
   );
 }
