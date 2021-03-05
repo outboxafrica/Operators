@@ -17,9 +17,10 @@ import TextField from '@material-ui/core/TextField';
         <div>
         <TextField
         //   label="Size"
+        variant={props.variant}
           id={props.id}
-          defaultValue={props.defaultValue}
-          variant={props.variant}
+          value={props.value}
+          onChange={props.onChange}
         />
         </div>
         
