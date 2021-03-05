@@ -10,8 +10,8 @@ export default function Footer() {
             <h3>Download Our App</h3>
             <p>Dowload Our App for Android and ios mobile phone</p>
             <div className="app-logo">
-              <img src="http://127.0.0.1:5500/images/play-store.png" alt />
-              <img src="http://127.0.0.1:5500/images/app-store.png" alt />
+              <img src="https://olili27.github.io/Online-Shop/images/play-store.png" alt />
+              <img src="https://olili27.github.io/Online-Shop/images/app-store.png" alt />
             </div>
           </div>
           <div className="footer-col-2">
@@ -65,7 +65,7 @@ export default function Footer() {
           </div>
         </div>
         <hr />
-        <p className="copyright">© EDU-Online, Inc 2021.</p>
+        <p className="copyright">EDU-Online, Inc © 2021.</p>
       </div>
     </div>
   );
