@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
            <Button 
            variant={props.variant}
             color={props.color}
+            onClick={props.onClick}
             >
         {props.text}
       </Button> 
