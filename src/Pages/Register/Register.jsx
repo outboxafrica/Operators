@@ -23,24 +23,24 @@ export default function Login() {
     // const[openSignIn, setOpenSignIn] = useState(null);
 
 
-    // useEffect(()=>{
-    //     const logOut = auth.onAuthStateChanged((authUser)=>{
-    //         if(authUser){
-    //             // User is logged into the system
-    //             console.log('AUTH_REGISTER '+ authUser)
-    //             setUser(authUser)
-    //             // setName("")
-    //             // setEmail("")
-    //             // setPassword("")
-    //         }else{
-    //             // log out user
-    //             setUser(null)
-    //         }
-    //     })
-    //     return ()=>{
-    //         logOut()
-    //     }
-    // }, [user, name])
+    useEffect(()=>{
+        const logOut = auth.onAuthStateChanged((authUser)=>{
+            if(authUser){
+                // User is logged into the system
+                console.log('AUTH_REGISTER '+ authUser)
+                setUser(authUser)
+                // setName("")
+                // setEmail("")
+                // setPassword("")
+            }else{
+                // log out user
+                setUser(null)
+            }
+        })
+        return ()=>{
+            logOut()
+        }
+    }, [user, name])
     
     const signUp = (e) =>{
         e.preventDefault();
@@ -59,8 +59,6 @@ export default function Login() {
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         })
         .catch(error=>alert(error.message))
-        
-        // history.push('/search')
     }
     if(user){
     history.push('/profileHome')}

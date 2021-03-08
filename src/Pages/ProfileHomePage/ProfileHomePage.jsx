@@ -34,7 +34,8 @@ function ProfileHomePage() {
         <div>
 
 
-      <button onClick={exit}>LOgout</button>
+      <button onClick={exit}>Logout</button>
+      <button onClick={()=>history.push('/post')}>Post</button>
     
 
             <h1>all questions</h1>

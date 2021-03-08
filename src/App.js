@@ -35,10 +35,10 @@ function App() {
 
         }else{
             // log out user
-            dispatch({
-                type:"SET_USER",
-                user:[]
-              });
+            // dispatch({
+            //     type:"SET_USER",
+            //     user:[]
+            //   });
         }
     })
     return ()=>{
@@ -52,7 +52,7 @@ console.log("User is >>>>",user);
 
   return (
     <div className="App">
-     {typeof user !="undefined"? <p>{user.email}</p>:"still undefined"}
+     {user?.displayName? (<p>{user.person}</p>):<p>Still undefined</p>}
         
          <Router>
       <Switch>
