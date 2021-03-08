@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react'
+import { useStateValue } from '../../ContextAPI/StateProvider';
+import {Link} from "react-router-dom";
 import Post from '../../Components/Post'
-import { db } from '../../Firebase/firebase';
+import { db, auth  } from '../../Firebase/firebase';
+import {useHistory} from  "react-router-dom";
+
 
 function ProfileHomePage() {
     const [posts, setPosts] = useState();
+    const [{ user}] = useStateValue();
+
+    const history =useHistory();
 
     useEffect(()=>{
         db.collection('posts')
@@ -17,19 +24,45 @@ function ProfileHomePage() {
           })
         },[]);
         // console.log(posts);
+       
+        function exit(){
+          auth.signOut()
+          history.push('/generalHome')
+        }
+
     return (
         <div>
-            {/* <h1>all questions</h1> */}
+
+
+      <button onClick={exit}>LOgout</button>
+    
+
+            <h1>all questions</h1>
             {console.log(posts)}
+            <h5>{user.person}</h5>
             {typeof posts != "undefined" ?
             posts.map(({id, post}) =>(
              <Post
              key={id}
              postId={id}
              question={post.question}
+             author={post.author}
              /> 
         )) : ''
       }
+
+      {/* <h5>{user.person}</h5>
+            {typeof posts != "undefined" ?
+            [...posts].filter((post) => post.author === user.person)
+            .map(({id, post}) =>(
+             <Post
+             key={id}
+             postId={id}
+             question={post.question}
+             author={post.author}
+             /> 
+        )) : ''
+      } */}
         </div>
     )
 }

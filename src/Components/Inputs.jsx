@@ -1,22 +1,11 @@
 import React from 'react'
-// import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
-// const useStyles = makeStyles((theme) => ({
-//     root: {
-//       '& .MuiTextField-root': {
-//         margin: theme.spacing(1),
-//         width: 200,
-//       },
-//     },
-//   }));
-
  export function Inputs(props) {
-    // const classes = useStyles();
     return (
-        <div>
+        <div className="Inputs">
+          <label htmlFor="">{props.label}</label>
         <TextField
-        //   label="Size"
         variant={props.variant}
           id={props.id}
           value={props.value}
@@ -26,5 +15,20 @@ import TextField from '@material-ui/core/TextField';
         
     )
 }
-
+export function TextArea(props) {
+  return (
+      <div className="TextArea">
+        <label htmlFor="">{props.label}</label>
+      <textarea
+      variant={props.variant}
+        id={props.id}
+        value={props.value}
+        onChange={props.onChange}
+        rows={props.rows} 
+        cols={props.cols}
+      />
+      </div>
+      
+  )
+}
 
