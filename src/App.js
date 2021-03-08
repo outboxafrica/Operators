@@ -4,7 +4,9 @@ import Post from './Pages/Post/PostPage';
 import General from './Pages/GeneralHomePage/GeneralHomePage';
 import ProfileHome from './Pages/ProfileHomePage/ProfileHomePage';
 import LookBook from './Pages/LookBookPage/LookBookPage';
+
 import './App.css';
+
 function App() {
   return (
     <div className="App">
