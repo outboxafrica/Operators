@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import firebase from "firebase";
-import { db } from "../Firebase/firebase";
+import { useStateValue } from '../ContextAPI/StateProvider';
+import { db, auth } from "../Firebase/firebase";
 
 function Post(props) {
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
   const [comment2, setComment2] = useState("");
+  const [{ user}] = useStateValue();
+
 
   useEffect(() => {
     let unsubscribe;
@@ -32,28 +35,33 @@ function Post(props) {
     db.collection("posts").doc(props.postId).collection("comments").add({
         text:comment,
         // username: user.displayName,
-        username: "ANONYMOU",
+        username: user.person,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
     });
     console.log(comment);
     setComment('');
 }
+function myID(){
+  setInterval(Math.random(), 1);
 
-
+}
+function exit(){
+  auth.signOut()
+}
   return (
     <div>
         {console.log(comment2)}
-      <p>{props.question}</p>
+      <p>{props.author}:{props.question}</p>
       <div className="post_comments">
         {typeof comments != "undefined" ?
         comments.map((comment) => (
-            <div key={props.postId}  className="comment">
+            <div key={myID}  className="comment">
           <p className="comment1">
             <strong>{comment.username}: </strong>
             {comment.text}
           </p>
           </div>
-        )):""
+        )):<h1>Loading...</h1>
     }
     <form className="post_commentBox">
                 <input type="text" className="post_input" placeholder="Add a comment" value={comment} onChange={(e) => setComment(e.target.value)}/>
@@ -61,7 +69,10 @@ function Post(props) {
                 <button disabled={!comment}  className="post_button" type="submit" onClick={postComment}>comment</button>
             </form>
       </div>
-      <button  onClick={event=>db.collection('posts').doc(props.postId).delete()}>delete post</button>
+      {
+            exit()===user.person?(<button  onClick={event=>db.collection('posts').doc(props.postId).delete()}>delete post</button>):""
+            }
+      
 
     </div>
   );
