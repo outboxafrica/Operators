@@ -25,6 +25,7 @@ function GeneralHomePage() {
                 <p>EDU ONLINE</p>
                 <Link className="header-item" to="#" >Events</Link>
                 <Link className="header-item" to="/register">Join Us</Link>
+                <Link className="header-item" to="/">Scholars</Link>
             </div>
             {/* {user.person}
             {user.person ==="null"||typeof user.person =="undefined"?<Link to = "/sighIn"><Button className= "waves-effect waves-light btn">Login</Button></Link>:<Link to = "/profileHome"><button>Sign In</button></Link>}

@@ -22,7 +22,7 @@ body{
 }
 .mini-header > p {
     font-size: 1.6rem;
-    flex-grow: 2;
+    flex-grow: 4;
     font-weight: bold;
     padding-right: 90px;
     color: rgb(56, 122, 221);
@@ -99,6 +99,6 @@ a:hover{
 
 }
 .std-event:hover {
-    transform: scale(1.1);
-    transition: all 1.2s ease;
+    transform: scale(1.03);
+    transition: all 1s ease;
 }
