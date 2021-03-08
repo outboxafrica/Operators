@@ -16,34 +16,37 @@ export default function Login() {
 
 
 
-    useEffect(()=>{
-        const unsubscribe = auth.onAuthStateChanged((authUser)=>{
-            if(authUser){
-                // User is logged into the system
-                console.log(authUser)
-                setUser(authUser)
+    // useEffect(()=>{
+    //     const unsubscribe = auth.onAuthStateChanged((authUser)=>{
+    //         if(authUser){
+    //             // User is logged into the system
+    //             console.log(authUser)
+    //             setUser(authUser)
 
-            }else{
-                // log out user
-                setUser(null)
-            }
-        })
-        return ()=>{
-            unsubscribe()
-        }
-    }, [user, name])
+    //         }else{
+    //             // log out user
+    //             setUser(null)
+    //         }
+    //     })
+    //     return ()=>{
+    //         unsubscribe()
+    //     }
+    // }, [user, name])
 
     
     function signIn(event){
         event.preventDefault();
         auth
         .signInWithEmailAndPassword(email, password)
+        .then(auth => {
+            history.push('/profileHome');
+          })
         .catch((error) => alert(error.message));
         setOpenSignIn(false);
       }
     //   history.push('/generalHome')
-      if(user){
-      history.push('/profileHome')}
+    //   if(email){
+    //   history.push('/profileHome')}
 
 
     return (

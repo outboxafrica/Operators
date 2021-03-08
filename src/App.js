@@ -28,7 +28,10 @@ function App() {
                   person:authUser.displayName,
                 email:authUser.email,
               },
-              });
+              // user:authUser.displayName,
+              
+            },
+              );
 
         }else{
             // log out user
@@ -49,7 +52,7 @@ console.log("User is >>>>",user);
 
   return (
     <div className="App">
-     
+     {typeof user !="undefined"? <p>{user.email}</p>:"still undefined"}
         
          <Router>
       <Switch>

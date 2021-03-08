@@ -44,7 +44,7 @@ export default function Login() {
     
     const signUp = (e) =>{
         e.preventDefault();
-        auth.createUserWithEmailAndPassword(name,email, password)
+        auth.createUserWithEmailAndPassword(email, password)
         .then((authUser)=>{
             return authUser.user.updateProfile({
                 displayName: name,
