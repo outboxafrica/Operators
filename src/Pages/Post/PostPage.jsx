@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import firebase from "firebase";
 import { useStateValue } from '../../ContextAPI/StateProvider';
+import {Link} from "react-router-dom";
 
 import {Inputs, TextArea} from '../../Components/Inputs';
 import Button from '../../Components/Buttton'
@@ -33,6 +34,7 @@ function postApost(event) {
 
     return (
         <div>
+           <Link to = "/profileHome"><button>All Questions</button></Link>
         <form >
         
           <Inputs

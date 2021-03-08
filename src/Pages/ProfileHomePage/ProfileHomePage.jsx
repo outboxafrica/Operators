@@ -14,7 +14,7 @@ function ProfileHomePage() {
 
     useEffect(()=>{
         db.collection('posts')
-        // .orderBy('timestamp','desc')
+        .orderBy('timestamp','desc')
         .onSnapshot(snapshot =>{
           setPosts(snapshot.docs.map(doc => ({
             id:doc.id,
@@ -28,13 +28,14 @@ function ProfileHomePage() {
         function exit(){
           auth.signOut()
           history.push('/generalHome')
+          window.location.reload();
         }
 
     return (
         <div>
 
 
-      <button onClick={exit}>Logout</button>
+      <button onClick={exit}><Link to = "/generalHome">Logout:</Link></button>
       <button onClick={()=>history.push('/post')}>Post</button>
     
 

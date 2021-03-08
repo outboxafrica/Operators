@@ -42,7 +42,7 @@ export default function Login() {
             history.push('/profileHome');
           })
         .catch((error) => alert(error.message));
-        setOpenSignIn(false);
+        // setOpenSignIn(false);
       }
     //   history.push('/generalHome')
     //   if(email){
@@ -64,7 +64,7 @@ export default function Login() {
             ):(
                <p>{email}</p>
             )}
-            {!openSignIn? <h5>you are signed in</h5>:<h5>you are Not signed in</h5>}
+            {/* {!openSignIn? <h5>you are signed in</h5>:<h5>you are Not signed in</h5>} */}
             
         </form>
     )

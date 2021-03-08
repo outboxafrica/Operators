@@ -2,16 +2,15 @@ import React,{useEffect, useState} from 'react';
 import { db, auth } from "./Firebase/firebase";
 import { useStateValue } from './ContextAPI/StateProvider';
 import{BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Register from "./Pages/Register/Register";
+import Profile from "./Pages/Register/Profile";
+import SighIn from "./Pages/Register/SighIn";
 import Post from './Pages/Post/PostPage';
 import General from './Pages/GeneralHomePage/GeneralHomePage';
 import ProfileHome from './Pages/ProfileHomePage/ProfileHomePage';
 import QuestionAndComments from './Pages/QuestionAndCommentsPage/QuestionAndComments';
 import GeneralHome from './Pages/GeneralHomePage/GeneralHomePage';
-
 import LookBook from './Pages/LookBookPage/LookBookPage';
-import Register from "./Pages/Register/Register";
-import Profile from "./Pages/Register/Profile";
-import SighIn from "./Pages/Register/SighIn";
 import './App.css';
 function App() {
   const[openSignIn, setOpenSignIn] = useState(null);
@@ -33,13 +32,15 @@ function App() {
             },
               );
 
-        }else{
-            // log out user
-            // dispatch({
-            //     type:"SET_USER",
-            //     user:[]
-            //   });
         }
+        // else{
+        //     // log out user
+        //     dispatch({
+        //         type:"SET_USER",
+        //         user:[]
+        //       });
+        //       console.log("User logged out");
+        // }
     })
     return ()=>{
         unsubscribe()
