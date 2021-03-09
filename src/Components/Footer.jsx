@@ -19,17 +19,17 @@ export default function Footer() {
           <div className="footer-col-2">
             <h2 style={{fontSize: "1.8rem", paddingBottom:"13px"}}>EDU ONLINE</h2>
             <p>
-            Helping developers and technologists write the script of the future
-            <br/>
-            <br/>
+              Helping developers and technologists write the script of the
+              future
+              <br />
+              <br />
               <ul>
-                  <li>About</li>
-                  <li>Privacy Policy</li>
-                  <li>Terms of Service</li>
-                  <li>Contact Us</li>
+                <li>About</li>
+                <li>Privacy Policy</li>
+                <li>Terms of Service</li>
+                <li>Contact Us</li>
               </ul>
             </p>
-           
           </div>
           <div className="footer-col-4">
             <h3>Follow Us</h3>

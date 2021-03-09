@@ -40,7 +40,6 @@ function GeneralHomePage() {
           <h1>Welcome to OutBox EDU</h1>
           <span>The learning platform during this period</span>
           <div className="buttons">
-            {user.person}
             {user.person === "null" || typeof user.person == "undefined" ? (
               <Link to="/sighIn">
                 <Button
@@ -53,8 +52,15 @@ function GeneralHomePage() {
                 </Button>
               </Link>
             ) : (
-              <Link to="/profileHome">
-                <Button>Home</Button>
+              <Link to="/sighIn">
+                <Button
+                  style={{ margin: "10px", width: "90px", fontSize:"0.9rem" }}
+                  variant="contained"
+                  color="primary"
+                  className=""
+                >
+                    Login
+                </Button>
               </Link>
             )}
 
@@ -79,21 +85,7 @@ function GeneralHomePage() {
                 </Button>
               </Link>
             )}
-            {/* <Button
-              style={{ margin: "10px", width: "100px" }}
-              variant="contained"
-              color="primary"
-            >
-              <Link to="/register">Register</Link>
-            </Button>
-
-            <Button
-              style={{ margin: "10px", width: "100px" }}
-              variant="contained"
-              color="primary"
-            >
-              <Link to="/sighIn">Sign in</Link>
-            </Button> */}
+            
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { db, auth } from "../../Firebase/firebase";
-import {useHistory} from  "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./Register.css";
 import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
@@ -70,7 +70,7 @@ export default function Login() {
             ):(
                <p>{email}</p>
             )}
-            {!openSignIn? <h5>you are signed in</h5>:<h5>you are Not signed in</h5>}
+            {/* {!openSignIn? <h5>you are signed in</h5>:<h5>you are Not signed in</h5>} */}
             
         </form>
         </div>
