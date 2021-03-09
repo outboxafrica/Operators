@@ -1,5 +1,5 @@
 import React from "react";
-import './Footer.css'
+import "./Footer.css";
 
 export default function Footer() {
   return (
@@ -10,24 +10,33 @@ export default function Footer() {
             <h3>Download Our App</h3>
             <p>Dowload Our App for Android and ios mobile phone</p>
             <div className="app-logo">
-              <img src="https://olili27.github.io/Online-Shop/images/play-store.png" alt />
-              <img src="https://olili27.github.io/Online-Shop/images/app-store.png" alt />
+              <img
+                src="https://olili27.github.io/Online-Shop/images/play-store.png"
+                alt
+              />
+              <img
+                src="https://olili27.github.io/Online-Shop/images/app-store.png"
+                alt
+              />
             </div>
           </div>
           <div className="footer-col-2">
-            <img src="https://outbox.co.ug/themes/obx/assets/img/outbox.png" alt />
+            <img
+              src="https://outbox.co.ug/themes/obx/assets/img/outbox.png"
+              alt
+            />
             <p>
-            Helping developers and technologists write the script of the future
-            <br/>
-            <br/>
+              Helping developers and technologists write the script of the
+              future
+              <br />
+              <br />
               <ul>
-                  <li>About</li>
-                  <li>Privacy Policy</li>
-                  <li>Terms of Service</li>
-                  <li>Contact Us</li>
+                <li>About</li>
+                <li>Privacy Policy</li>
+                <li>Terms of Service</li>
+                <li>Contact Us</li>
               </ul>
             </p>
-           
           </div>
           <div className="footer-col-3">
             <h3>Useful Links</h3>

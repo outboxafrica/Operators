@@ -1,11 +1,10 @@
-.Inputs{
-    display: flex;
-    flex-direction: column;
-    width: 20rem;
-    /* border: 2px solid black; */
+.Inputs {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
 }
-.TextArea{
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
+.TextArea {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
 }

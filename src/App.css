@@ -20,8 +20,6 @@ a{
     width:1400px;
     margin: auto auto;
     max-width: 100%;
-    /* border: 10px solid red; */
-    /* margin-bottom: 50px; */
 }
 .content{
     margin:10px ;
@@ -29,7 +27,6 @@ a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* border: 2px solid black; */
     width: 100%;
 
 }

@@ -59,7 +59,7 @@ function LookBookPage() {
         <div className="items">
       {
         appUsers.map(({id, post}) =>(
-          <div key={id} postId={id} className="card">
+          <div key={id}  className="card">
               <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
