@@ -8,7 +8,7 @@ import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
+// import MenuIcon from '@material-ui/icons/Menu';
 // import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
@@ -127,7 +127,7 @@ function ProfileNavBar(props) {
       <MenuItem onClick={handleMenuClose}> 
       <p onClick={()=>history.push('/lookBook')}>look book</p>
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      {/* <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
     </Menu>
   );
 
@@ -146,13 +146,19 @@ function ProfileNavBar(props) {
         <IconButton aria-label="show 4 new mails" color="inherit">
             <MeetingRoomIcon />
         </IconButton>
-        <p className="nav_menu" onClick={exit}><Link to = "/generalHome">Logout</Link></p>
+        <p className="nav_menu" onClick={exit}><Link to = "/">Logout</Link></p>
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
             <PostAddIcon />
         </IconButton>
-        <p>Post</p>
+        <p onClick={()=>history.push('/post')}>Post</p> 
+      </MenuItem>
+      <MenuItem>
+        <IconButton aria-label="show 11 new notifications" color="inherit">
+            <PostAddIcon />
+        </IconButton>
+        <p onClick={()=>history.push('/profileHome')}>All posts</p> 
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -163,14 +169,14 @@ function ProfileNavBar(props) {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+        <p>{props.profile}</p>
       </MenuItem>
     </Menu>
   );
 
   function exit(){
     auth.signOut()
-    history.push('/generalHome')
+    history.push('/')
     window.location.reload();
   }
 
@@ -184,7 +190,7 @@ function ProfileNavBar(props) {
             color="inherit"
             aria-label="open drawer"
           >
-            <MenuIcon />
+            {/* <MenuIcon /> */}
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             EduOnline
@@ -193,10 +199,13 @@ function ProfileNavBar(props) {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
-            <p onClick={exit}><Link to = "/generalHome">Logout</Link></p>
+            <p className="nav_menu_white"onClick={exit}>Logout</p>
             </IconButton>
             <IconButton aria-label="show 17 new notifications" color="inherit">
             <p onClick={()=>history.push('/post')}>Post</p> 
+            </IconButton>
+            <IconButton aria-label="show 17 new notifications" color="inherit">
+            <p onClick={()=>history.push('/profileHome')}>All posts</p> 
             </IconButton>
             <IconButton
               edge="end"
@@ -205,8 +214,8 @@ function ProfileNavBar(props) {
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
-            >
-              <p>Profile</p>
+            ><AccountCircle />
+              <p>{props.profile}</p>
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>

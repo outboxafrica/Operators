@@ -26,23 +26,14 @@ function ProfileHomePage(props) {
           })
         },[]);
         // console.log(posts);
-       
-        function exit(){
-          auth.signOut()
-          history.push('/generalHome')
-          window.location.reload();
-        }
 
     return (
-        <div className="ProfileHomePage">
-          <ProfileNavBar/>
-      <button onClick={exit}><Link to = "/generalHome">Logout:</Link></button>
-      <button onClick={()=>history.push('/post')}>Post</button> <button onClick={()=>history.push('/lookBook')}>look book</button>
-    
-
-            <h1>all questions</h1>
+        <div className="display">
+          <ProfileNavBar 
+          profile={user.person}/>
+<div className="content">
+      <h3>All Posts</h3>
             {console.log(posts)}
-            <h5>{user.person}</h5>
             {typeof posts != "undefined" ?
             posts.map(({id, post}) =>(
              <Post
@@ -53,19 +44,8 @@ function ProfileHomePage(props) {
              /> 
         )) : ''
       }
-
-      {/* <h5>{user.person}</h5>
-            {typeof posts != "undefined" ?
-            [...posts].filter((post) => user.person)
-            .map(({id, post}) =>(
-             <Post
-             key={id}
-             postId={id}
-             question={post.question}
-             author={post.author}
-             /> 
-        )) : ''
-      } */}
+</div>
+        
         </div>
 
     

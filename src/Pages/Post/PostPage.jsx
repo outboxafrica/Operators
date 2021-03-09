@@ -9,6 +9,7 @@ import { db } from '../../Firebase/firebase';
 import {useHistory} from  "react-router-dom";
 
 import Post from '../../Components/Post'
+import ProfileNavBar from '../../Components/ProfileNavBar';
 
 
 function PostPage() {
@@ -37,8 +38,10 @@ function postApost(event) {
 }
 
     return (
-        <div>
-           <Link to = "/profileHome"><button>All Questions</button></Link>
+        <div className="display">
+          <ProfileNavBar/>
+          <div className="content">
+          <h3>Posts</h3>
         <form >
         
           <Inputs
@@ -57,7 +60,7 @@ function postApost(event) {
           onClick={postApost}
           />
           </form>
-
+          </div>
         </div>
     )
 }

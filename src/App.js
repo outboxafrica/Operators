@@ -58,12 +58,12 @@ console.log("User is >>>>",user);
         
          <Router>
       <Switch>
-      <Route exact path="/generalHome" component={GeneralHome}/>
+      <Route exact path="/" component={General}/>
 
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/sighIn" component={SighIn} />
          <Route exact path="/register" component={Register} />
-      <Route exact path="/" component={General}/>
+         
         <Route exact path="/lookBook" component={LookBook}/>
       <Route exact path="/post" component={Post}/>
       <Route exact path="/QuestionAndComments" component={QuestionAndComments}/>
