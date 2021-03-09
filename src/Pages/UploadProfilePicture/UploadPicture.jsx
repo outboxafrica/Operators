@@ -33,14 +33,14 @@ function UploadPicture() {
   };
 
   return (
-    <div className="App">
-      <div className="row #42a5f5 blue lighten-1 ">
+    <div className="App  card-panel  ">
+      <div className="row z-depth-2 ">
         <div className="col s12 m12">
-          <div className="card">
-            <div className="card-image #64b5f6 blue lighten-2 ">
+          <div className="card z-depth-2">
+            <div className="card-image #4db6ac teal lighten-2 ">
               {!imageSelected || avatar ? (
                 <Avatar
-                  facebookId="100008343750912"
+                  facebookId="100008388744912"
                   color="#0000ff blue"
                   size="150"
                 />
@@ -64,13 +64,13 @@ function UploadPicture() {
                 />
               </span>
             </div>
-            <div className="card-content #42a5f5 blue lighten-1 ">
+            <div className="card-content  ">
               {/* this can be passed aa a prop of value name*/}
-              <h3 className='lime-text text-lighten-5'>olili timothy</h3>
+              <h2 ><input type="text" placeholder="Name"/></h2>
             </div>
-            <div className="card-action  #b2ebf2 cyan lighten-4 ">
+            <div className="card-action   ">
               {/* this can be passed as a prop of value role */}
-              <h4>Student</h4>
+              <h4><input type="text" placeholder="Role"/></h4>
               <span>
                 <button className="#4db6ac teal lighten-2" onClick={uploadImage}>Upload</button>
               </span>
