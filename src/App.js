@@ -11,6 +11,7 @@ import ProfileHome from './Pages/ProfileHomePage/ProfileHomePage';
 import QuestionAndComments from './Pages/QuestionAndCommentsPage/QuestionAndComments';
 import GeneralHome from './Pages/GeneralHomePage/GeneralHomePage';
 import LookBook from './Pages/LookBookPage/LookBookPage';
+
 import './App.css';
 function App() {
   const[openSignIn, setOpenSignIn] = useState(null);
@@ -53,19 +54,20 @@ console.log("User is >>>>",user);
 
   return (
     <div className="App">
-     {user?.displayName? (<p>{user.person}</p>):<p>Still undefined</p>}
+     {/* {user?.displayName? (<p>{user.person}</p>):<p>Still undefined</p>} */}
         
          <Router>
       <Switch>
-        <Route exact path="/lookBook" component={LookBook}/>
-      <Route exact path="/post" component={Post}/>
-      <Route exact path="/QuestionAndComments" component={QuestionAndComments}/>
       <Route exact path="/generalHome" component={GeneralHome}/>
-         <Route exact path="/profileHome" component={ProfileHome}/>
+
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/sighIn" component={SighIn} />
          <Route exact path="/register" component={Register} />
       <Route exact path="/" component={General}/>
+        <Route exact path="/lookBook" component={LookBook}/>
+      <Route exact path="/post" component={Post}/>
+      <Route exact path="/QuestionAndComments" component={QuestionAndComments}/>
+         <Route exact path="/profileHome" component={ProfileHome}/>
         </Switch>
     </Router>
       

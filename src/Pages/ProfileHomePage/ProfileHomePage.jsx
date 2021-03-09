@@ -4,9 +4,11 @@ import {Link} from "react-router-dom";
 import Post from '../../Components/Post'
 import { db, auth  } from '../../Firebase/firebase';
 import {useHistory} from  "react-router-dom";
+import ProfileNavBar from '../../Components/ProfileNavBar';
 
+import './ProfileHomePage.css'
 
-function ProfileHomePage() {
+function ProfileHomePage(props) {
     const [posts, setPosts] = useState();
     const [{ user}] = useStateValue();
 
@@ -32,11 +34,10 @@ function ProfileHomePage() {
         }
 
     return (
-        <div>
-
-
+        <div className="ProfileHomePage">
+          <ProfileNavBar/>
       <button onClick={exit}><Link to = "/generalHome">Logout:</Link></button>
-      <button onClick={()=>history.push('/post')}>Post</button>
+      <button onClick={()=>history.push('/post')}>Post</button> <button onClick={()=>history.push('/lookBook')}>look book</button>
     
 
             <h1>all questions</h1>
@@ -55,7 +56,7 @@ function ProfileHomePage() {
 
       {/* <h5>{user.person}</h5>
             {typeof posts != "undefined" ?
-            [...posts].filter((post) => post.author === user.person)
+            [...posts].filter((post) => user.person)
             .map(({id, post}) =>(
              <Post
              key={id}
@@ -66,6 +67,8 @@ function ProfileHomePage() {
         )) : ''
       } */}
         </div>
+
+    
     )
 }
 

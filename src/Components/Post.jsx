@@ -69,9 +69,9 @@ function exit(){
                 <button disabled={!comment}  className="post_button" type="submit" onClick={postComment}>comment</button>
             </form>
       </div>
-      {
-            exit()===user.person?(<button  onClick={event=>db.collection('posts').doc(props.postId).delete()}>delete post</button>):""
-            }
+      
+            <button  onClick={event=>db.collection('posts').doc(props.postId).delete()}>delete post</button>
+            
       
 
     </div>

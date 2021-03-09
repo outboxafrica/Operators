@@ -1,8 +1,12 @@
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
 .App{
-    width:1600px;
+    width:2000px;
     margin: auto auto;
     max-width: 100%;
-    /* border: 2px solid black; */
+    border: 2px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;

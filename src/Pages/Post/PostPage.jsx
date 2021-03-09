@@ -6,6 +6,8 @@ import {Link} from "react-router-dom";
 import {Inputs, TextArea} from '../../Components/Inputs';
 import Button from '../../Components/Buttton'
 import { db } from '../../Firebase/firebase';
+import {useHistory} from  "react-router-dom";
+
 import Post from '../../Components/Post'
 
 
@@ -13,6 +15,7 @@ function PostPage() {
   const [apost, setApost] = useState("");
   const [person, setperson] = useState("");
   const [{ user}] = useStateValue();
+  const history =useHistory();
 
 useEffect(() => {
   if(typeof user != "undefined"){
@@ -30,6 +33,7 @@ function postApost(event) {
   setApost('');
   console.log(apost);
   // setPostBody("");
+  history.push('/profileHome')
 }
 
     return (
