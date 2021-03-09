@@ -123,4 +123,3 @@ export default function Login() {
     )
 }
 
-export default Register
