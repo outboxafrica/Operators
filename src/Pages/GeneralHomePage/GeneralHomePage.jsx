@@ -110,10 +110,10 @@ function GeneralHomePage() {
           />
           <h3>Dev Night</h3>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam,
-            repellendus quasi. Quisquam, saepe ex consequatur blanditiis est
-            incidunt eius animi hic dignissimos possimus debitis doloribus vitae
-            recusandae. Modi, molestiae commodi Modi, molestiae commodi!
+          "What is Dev Night?" , one might ask.
+A lot of software developers feel like they want to do something but don't know where to start.
+So, this Thursday 6pm, we are building the first Jumia Clone (in honour of Black-Friday) as we show you how to get started.
+To join us in this amazing online (emphasis on online) journey, click <em><a href="http://bit.ly/devnightEDU" style={{textDecoration:"underline",color:"#99b" }}>here </a></em> to register your spot.<br /> <span style={{color:"#99e", fontSize:"1rem"}}>#outboxedu #endingtheyearsoftwaredeveloperstyle</span>
           </p>
 
           <Button variant="outlined" color="primary">
@@ -127,10 +127,9 @@ function GeneralHomePage() {
           />
           <h3>Get Together</h3>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam,
-            repellendus quasi. Quisquam, saepe ex consequatur blanditiis est
-            incidunt eius animi hic dignissimos possimus debitis doloribus vitae
-            recusandae. Modi, molestiae commodi!
+          Are you passionate about developing a career in tech? <br/>
+            Join the Outbox EDU Full Stack Web Development class            offering a fulfilling and rewarding 20-week experience          of accelerated Web-based learning. <br /> Apply here: <a style={{color:"#99e"}} href="https://     bit.ly/3azjcPA">https://     bit.ly/3azjcPA</a> <br />
+Class begins March 15th 2021
           </p>
 
           <Button variant="outlined" color="primary">
