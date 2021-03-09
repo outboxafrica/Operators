@@ -3,4 +3,34 @@
 .auth-form{
     display: flex;
     flex-direction: column;
+    
+   
+}
+.regis {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: block;
+    width: auto;
+    
+}
+.register {
+    padding-left: 40px;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+.icon {
+    font-size: 70px;
+    padding-left: 230px;
+    padding-bottom: 8px;
+    text-align: center;
+}
+form {
+    margin: 0 100px 0 100px;
+  }
+.reg-title {
+    margin: 8px 0 15px 0;
+    font-size: 17px;
 }
