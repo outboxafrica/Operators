@@ -22,6 +22,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import DeleteIcon from '@material-ui/icons/Delete';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -149,11 +151,14 @@ function exit(){
         image="/static/images/cards/paella.jpg"
         title="Paella dish"
       /> */}
+        <hr/>
+
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
         <p>{props.question}</p>
         </Typography>
       </CardContent>
+      <hr/>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <DeleteIcon  onClick={event=>db.collection('posts').doc(props.postId).delete()}/>
@@ -186,9 +191,9 @@ function exit(){
           </Typography>
           <Typography paragraph>
           <form className="post_commentBox">
-                <input type="text" className="post_input" placeholder="Add a comment" value={comment} onChange={(e) => setComment(e.target.value)}/>
+                <TextField type="text" className="post_input" placeholder="Add a comment" value={comment} onChange={(e) => setComment(e.target.value)}/>
 
-                <button disabled={!comment}  className="post_button" type="submit" onClick={postComment}>comment</button>
+                <Button disabled={!comment}  className="post_button" type="submit" onClick={postComment}>comment</Button>
             </form>
           </Typography>
         </CardContent>

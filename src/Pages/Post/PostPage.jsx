@@ -45,20 +45,20 @@ function postApost(event) {
         <form >
         
           <Inputs
-          label="title"
+          label="Make a post"
           id="outlined-size-normal"
           variant="outlined"
           placeholder='Enter a paost...'
           value={apost}
           onChange={event => setApost(event.target.value)}
           />
-          
-          <Button
+          {!apost?"":<Button
           variant="contained"
           color="primary"
           text="Post"
           onClick={postApost}
-          />
+          />}
+          
           </form>
           </div>
         </div>
