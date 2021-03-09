@@ -86,8 +86,12 @@ function EditProfile(props) {
                 cols="50"
                 />
                  <progress className="imageupload_progress" value={progress} max="100"></progress>
+                 <p></p>
             <input type="file" onChange={handleChange}/>
-            <Button onClick={handleUpload}>
+            <p></p>
+            <Button 
+            variant="contained" color="primary"
+            onClick={handleUpload}>
                 Upload
             </Button>
             </div>

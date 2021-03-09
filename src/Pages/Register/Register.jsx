@@ -81,14 +81,18 @@ export default function Login() {
             
             <input type="radio"  value="Student" onClick={(e)=>setStudent(e.target.value)}/>
             <label >Student</label><br/>
-            <input type="radio" value="Student"  onClick={(e)=>setFacilitator(e.target.value)}/>
-            <label >Facilitator</label><br/>  
+            <input type="radio" value="Facilitator"  onClick={(e)=>setFacilitator(e.target.value)}/>
+            <label >Facilitator</label><br/> 
+            {!name||!email||!password?"":(
+                 <div className=""> 
             {user? (
                 <Button type="submit" onClick={()=>auth.signOut()}>Logout</Button>
             ):(
                 <Button type="submit" onClick={signUp}>SignUp</Button>
             )}
-            
+            </div>
+            )}
+           
         </form>
     )
 }
