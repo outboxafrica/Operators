@@ -34,3 +34,16 @@ form {
     margin: 8px 0 15px 0;
     font-size: 17px;
 }
+.radio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 14px;
+
+}
+.signinregister {
+    padding-top: 8px;
+}
+.password {
+    padding-bottom: 10px;
+}

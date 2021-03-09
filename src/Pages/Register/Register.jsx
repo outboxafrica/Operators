@@ -71,14 +71,18 @@ export default function Login() {
         // history.push('/search')
     }
     if(user){
-    history.push('/profileHome')}
+    history.push('/signIn')}
 
     
     
     return (
         <Container maxWidth="sm">
             <div className="regis">
-            <h2 className="register">Register</h2>
+            
+            <div className="register">
+                <h2>EDU ONLINE</h2>
+                <p>Register</p>
+            </div>
             <div className="reg-icon">
             <PeopleAltIcon className="icon" style={{ fontSize: 70 }} />
             </div>
@@ -99,15 +103,17 @@ export default function Login() {
             <label className="reg-title" >Role</label>
             
             
+            <div className="radio">
             <input type="radio"  value="Student" onClick={(e)=>setStudent(e.target.value)}/>
-            <label className="reg-title">Student</label><br/>
+            <label className="">Student</label><br/>
             <input type="radio" value="Student"  onClick={(e)=>setFacilitator(e.target.value)}/>
-            <label className="reg-title">Facilitator</label><br/>  
+            <label className="">Facilitator</label><br/>  
+            </div>
             {user? (
                 <Button type="submit" onClick={()=>auth.signOut()}>Logout</Button>
             ):(
                 
-                <Button variant="outlined" color="primary"type="submit" onClick={signUp} href="#outlined-buttons" >SignUp</Button>
+                <Button variant="outlined" color="primary"type="submit" onClick={signUp}  >SignUp</Button>
 
             )}
             
