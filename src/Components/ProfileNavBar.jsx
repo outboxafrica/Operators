@@ -104,7 +104,7 @@ function ProfileNavBar(props) {
       <MenuItem onClick={handleMenuClose}> 
       <p onClick={()=>history.push('/lookBook')}>look book</p>
       </MenuItem>
-      {/* <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
+      <MenuItem onClick={handleMenuClose}><p onClick={()=>history.push('/editprofile')}>Edit account</p></MenuItem>
     </Menu>
   );
 

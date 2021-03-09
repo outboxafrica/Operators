@@ -4,3 +4,8 @@
     width: 20rem;
     /* border: 2px solid black; */
 }
+.TextArea{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}

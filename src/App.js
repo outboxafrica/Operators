@@ -11,6 +11,8 @@ import ProfileHome from './Pages/ProfileHomePage/ProfileHomePage';
 import QuestionAndComments from './Pages/QuestionAndCommentsPage/QuestionAndComments';
 import GeneralHome from './Pages/GeneralHomePage/GeneralHomePage';
 import LookBook from './Pages/LookBookPage/LookBookPage';
+import EditProfile from './Pages/EditProfile/EditProfile';
+
 
 import './App.css';
 function App() {
@@ -63,7 +65,8 @@ console.log("User is >>>>",user);
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/sighIn" component={SighIn} />
          <Route exact path="/register" component={Register} />
-         
+
+        <Route exact path="/editprofile" component={EditProfile}/>
         <Route exact path="/lookBook" component={LookBook}/>
       <Route exact path="/post" component={Post}/>
       <Route exact path="/QuestionAndComments" component={QuestionAndComments}/>
