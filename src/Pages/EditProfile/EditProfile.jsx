@@ -6,6 +6,7 @@ import { useStateValue } from "../../ContextAPI/StateProvider";
 import { storage, db } from "../../Firebase/firebase";
 import firebase from "firebase";
 import "./EditProfile.css";
+import Footer from '../../Components/Footer';
 
 function EditProfile(props) {
   const [image, setImage] = useState(null);
@@ -100,6 +101,7 @@ function EditProfile(props) {
           Upload
         </Button>
       </div>
+        <Footer/>
     </div>
   );
 }

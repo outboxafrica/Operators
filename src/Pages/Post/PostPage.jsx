@@ -10,6 +10,7 @@ import {useHistory} from  "react-router-dom";
 
 import Post from '../../Components/Post'
 import ProfileNavBar from '../../Components/ProfileNavBar';
+import Footer from '../../Components/Footer';
 
 
 function PostPage() {
@@ -61,6 +62,7 @@ function postApost(event) {
           
           </form>
           </div>
+          <Footer/>
         </div>
     )
 }

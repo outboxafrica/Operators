@@ -7,7 +7,7 @@ a{
     /* color: aliceblue; */
 }
 .App{
-    width:2000px;
+    width:1500px;
     margin: auto auto;
     max-width: 100%;
     /* border: 2px solid black; */
@@ -17,7 +17,7 @@ a{
     align-items: center;
 }
 .display{
-    width:1400px;
+    width:2000px;
     margin: auto auto;
     max-width: 100%;
 }

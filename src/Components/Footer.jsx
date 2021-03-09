@@ -1,30 +1,23 @@
 import React from "react";
-import "./Footer.css";
+import {Link} from "react-router-dom"
+import './Footer.css'
 
 export default function Footer() {
   return (
     <div className="footer">
       <div className="container">
         <div className="row">
-          <div className="footer-col-1">
-            <h3>Download Our App</h3>
-            <p>Dowload Our App for Android and ios mobile phone</p>
-            <div className="app-logo">
-              <img
-                src="https://olili27.github.io/Online-Shop/images/play-store.png"
-                alt
-              />
-              <img
-                src="https://olili27.github.io/Online-Shop/images/app-store.png"
-                alt
-              />
-            </div>
+                    
+          <div className="footer-col-3">
+            <h2>Useful Links</h2>
+            <ul>
+              <Link to="/profileHome">Questions</Link>
+              <Link to="/lookBook">Alumni</Link>
+              <Link to="/register">Join Affiliate</Link>
+            </ul>
           </div>
           <div className="footer-col-2">
-            <img
-              src="https://outbox.co.ug/themes/obx/assets/img/outbox.png"
-              alt
-            />
+            <h2 style={{fontSize: "1.8rem", paddingBottom:"13px"}}>EDU ONLINE</h2>
             <p>
               Helping developers and technologists write the script of the
               future
@@ -37,15 +30,6 @@ export default function Footer() {
                 <li>Contact Us</li>
               </ul>
             </p>
-          </div>
-          <div className="footer-col-3">
-            <h3>Useful Links</h3>
-            <ul>
-              <li>Questions</li>
-              <li>Jobs</li>
-              <li>Help</li>
-              <li>Join Affiliate</li>
-            </ul>
           </div>
           <div className="footer-col-4">
             <h3>Follow Us</h3>

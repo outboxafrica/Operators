@@ -3,8 +3,14 @@ import { db, auth } from "../../Firebase/firebase";
 import firebase from "firebase";
 
 import "./Register.css";
-import { Button, Input } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
+import { Button, Input } from '@material-ui/core';
+import {useHistory} from "react-router-dom";
+import TextField from '@material-ui/core/TextField';
+import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
+import Container from '@material-ui/core/Container';
+
+
+
 
 import Select from "@material-ui/core/Select";
 
@@ -20,100 +26,170 @@ export default function Login() {
 
   // const[openSignIn, setOpenSignIn] = useState(null);
 
-  useEffect(() => {
-    const logOut = auth.onAuthStateChanged((authUser) => {
-      if (authUser) {
-        // User is logged into the system
-        console.log("AUTH_REGISTER " + authUser);
-        setUser(authUser);
-        // setName("")
-        // setEmail("")
-        // setPassword("")
-      } else {
-        // log out user
-        setUser(null);
-      }
-    });
-    return () => {
-      logOut();
-    };
-  }, [user, name]);
+//   useEffect(() => {
+//     const logOut = auth.onAuthStateChanged((authUser) => {
+//       if (authUser) {
+//         // User is logged into the system
+//         console.log("AUTH_REGISTER " + authUser);
+//         setUser(authUser);
+//         // setName("")
+//         // setEmail("")
+//         // setPassword("")
+//       } else {
+//         // log out user
+//         setUser(null);
+//       }
+//     });
+//     return () => {
+//       logOut();
+//     };
+//   }, [user, name]);
 
-  const signUp = (e) => {
-    e.preventDefault();
-    auth.createUserWithEmailAndPassword(email, password).then((authUser) => {
-      return authUser.user.updateProfile({
-        displayName: name,
-      });
-    });
-    db.collection("AppUsers")
-      .add({
-        name: name,
-        email: email,
-        facilitator: facilitator,
-        student: student,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      })
-      .catch((error) => alert(error.message));
-  };
-  if (user) {
+//   const signUp = (e) => {
+//     e.preventDefault();
+//     auth.createUserWithEmailAndPassword(email, password).then((authUser) => {
+//       return authUser.user.updateProfile({
+//         displayName: name,
+//       });
+//     });
+//     db.collection("AppUsers")
+//       .add({
+//         name: name,
+//         email: email,
+//         facilitator: facilitator,
+//         student: student,
+//         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+//       })
+//       .catch((error) => alert(error.message));
+//   };
+//   if (user) {
+//     window.location.reload();
+//     history.push("/sighIn");
+//   }
+
+//   return (
+//     <form className="auth-form">
+//       <h2>register</h2>
+//       <label>Username</label>
+//       <Input
+//         type="text"
+//         value={name}
+//         placeholder="Username"
+//         onChange={(e) => setName(e.target.value)}
+//       />
+
+//       <label>Email</label>
+//       <Input
+//         type="text"
+//         value={email}
+//         placeholder="Your email"
+//         onChange={(e) => setEmail(e.target.value)}
+//       />
+
+//       <label>Password</label>
+//       <Input
+//         type="text"
+//         value={password}
+//         placeholder="Password"
+//         onChange={(e) => setPassword(e.target.value)}
+//       />
+
+//       <label>Role</label>
+
+
+
+    useEffect(()=>{
+        const logOut = auth.onAuthStateChanged((authUser)=>{
+            if(authUser){
+                // User is logged into the system
+                console.log('AUTH_REGISTER '+ authUser)
+                setUser(authUser)
+                // setName("")
+                // setEmail("")
+                // setPassword("")
+            }else{
+                // log out user
+                setUser(null)
+            }
+        })
+        return ()=>{
+            logOut()
+        }
+    }, [user, name])
+    
+    const signUp = (e) =>{
+        e.preventDefault();
+        
+        auth.createUserWithEmailAndPassword(email, password)
+        .then((authUser)=>{
+            return authUser.user.updateProfile({
+                displayName: name,
+            })
+            
+        })
+        db.collection("AppUsers")
+        .add({
+            name:name,
+            email:email,
+            facilitator:facilitator,
+            student:student,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        .catch(error=>alert(error.message))
+        
+        // history.push('/search')
+    }
+    if (user) {
     window.location.reload();
     history.push("/sighIn");
   }
 
-  return (
-    <form className="auth-form">
-      <h2>register</h2>
-      <label>Username</label>
-      <Input
-        type="text"
-        value={name}
-        placeholder="Username"
-        onChange={(e) => setName(e.target.value)}
-      />
+    
+    
+    return (
+        <Container maxWidth="sm">
+            <div className="regis">
+            
+            <div className="register">
+                <h2>EDU ONLINE</h2>
+                <p>Register</p>
+            </div>
+            <div className="reg-icon">
+            <PeopleAltIcon className="icon" style={{ fontSize: 70 }} />
+            </div>
+        <form className="auth-form">
+            
+            <label className="reg-title">Username </label>
 
-      <label>Email</label>
-      <Input
-        type="text"
-        value={email}
-        placeholder="Your email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
+            <TextField id="outlined-basic" label="username" type="text" value={name}  onChange={(e)=>setName(e.target.value)} variant="outlined" />
 
-      <label>Password</label>
-      <Input
-        type="text"
-        value={password}
-        placeholder="Password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
+            
+            <label className="reg-title">Email</label>
+            <TextField id="outlined-basic" label="Your email" type="email" value={email}  onChange={(e)=>setEmail(e.target.value)} variant="outlined" />
 
-      <label>Role</label>
+            
+            <label className="reg-title">Password</label>
+            <TextField id="outlined-password-input" value={password} label="Password" type="password" onChange={(e)=>setPassword(e.target.value)} variant="outlined"/>
+            
+            <label className="reg-title" >Role</label>
+            
+            
+            <div className="radio">
+            <input type="radio"  value="Student" onClick={(e)=>setStudent(e.target.value)}/>
+            <label className="">Student</label><br/>
+            <input type="radio" value="Student"  onClick={(e)=>setFacilitator(e.target.value)}/>
+            <label className="">Facilitator</label><br/>  
+            </div>
+            {user? (
+                <Button type="submit" onClick={()=>auth.signOut()}>Logout</Button>
+            ):(
+                
+                <Button variant="outlined" color="primary"type="submit" onClick={signUp}  >SignUp</Button>
 
-      <input
-        type="radio"
-        value="Student"
-        onClick={(e) => setStudent(e.target.value)}
-      />
-      <label>Student</label>
-      <br />
-      <input
-        type="radio"
-        value="Facilitator"
-        onClick={(e) => setFacilitator(e.target.value)}
-      />
-      <label>Facilitator</label>
-      <br />
-
-      {user ? (
-        <Button type="submit" onClick={() => auth.signOut()}>
-          Logout
-        </Button>
-      ) : (
-        <Button type="submit" onClick={signUp}>
-          SignUp
-        </Button>
-      )}
-    </form>
-  );
+            )}
+            
+        </form>
+        </div>
+        </Container>
+    )
 }
