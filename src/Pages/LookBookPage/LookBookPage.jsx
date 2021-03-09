@@ -4,6 +4,9 @@ function LookBookPage() {
     return (
         <div>
             <h1>lookbook</h1>
+            <div>
+
+            </div>
         </div>
     )
 }
