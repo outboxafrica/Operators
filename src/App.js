@@ -14,6 +14,7 @@ import Profile from "./Pages/Register/Profile";
 import SighIn from "./Pages/Register/SighIn";
 import UploadPicture from "./Pages/UploadProfilePicture/UploadPicture";
 import "./App.css";
+
 function App() {
   const [openSignIn, setOpenSignIn] = useState(null);
   const [{ user }, dispatch] = useStateValue();
