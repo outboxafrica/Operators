@@ -89,7 +89,7 @@ function GeneralHomePage() {
           />
           <h3>Dev Night</h3>
           <p>
-            Night time chalenges to upskill our skills and be the best you can ever be.
+            Build had soft ware in the night with friends
           </p>
 
           <Button variant="outlined" color="primary">
@@ -103,7 +103,7 @@ function GeneralHomePage() {
           />
           <h3>Get Together</h3>
           <p>
-            Lets get to gether to create ideas that support our community to grow
+            share with friends what you have done 
           </p>
 
           <Button variant="outlined" color="primary">
