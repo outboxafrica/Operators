@@ -1,7 +1,6 @@
 *{
     margin: 0;
-    padding: 0;
-    
+    padding: 0; 
     
 }
 body{
@@ -25,8 +24,16 @@ body{
     flex-grow: 4;
     font-weight: bold;
     padding-right: 90px;
-    color: rgb(56, 122, 221);
-   
+    color: rgb(56, 122, 221); 
+}
+@media screen and (max-width: 700px) {
+    .mini-header{
+        flex-direction: column;
+    }
+    .header-item {
+        padding: 12px;
+        text-align: center;
+    }
 }
 
 a{
@@ -51,6 +58,9 @@ a:hover{
     color: aliceblue;
    
 }
+.hero-section h1{
+    font-size: 3.3rem;
+}
 .hero-section span {
     font-size: 1.6rem;
 }
@@ -73,10 +83,10 @@ a:hover{
 .std-event {
     flex: 0 45%;
     height: 670px;
-    /* width: 400px;  */
     margin: 30px;
     border-radius: 7px;
     background-color: white;
+    text-align: center;
 }
 .std-event :nth-child(2) {
     padding: 10px;

@@ -1,12 +1,13 @@
 .footer{
-    position: absolute;
+    
     bottom: 0;
     left: 0;
     right: 0;
-    background: #044479;
+    background: rgb(56, 122, 221);
     color: rgb(240, 240, 240);
     font-size: 14px;
-    padding: 60px o 20px;
+    padding: 30px 20px 0 20px;
+
 }
 
 .row{
@@ -14,9 +15,16 @@
     margin-top: 1rem;
 }
 
-.footer a{
+.footer-col-3 ul{
+    display: flex;
+    flex-direction: column;
+    
+}
+.footer-col-3 a{
     color: #fff;
-    opacity: 0.5;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 1rem;
 }
 
 .footer p{

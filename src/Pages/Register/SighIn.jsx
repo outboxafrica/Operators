@@ -2,52 +2,75 @@ import React, { useEffect, useState } from "react";
 import { db, auth } from "../../Firebase/firebase";
 import { useHistory } from "react-router-dom";
 import "./Register.css";
-import { Button, Input } from "@material-ui/core";
+import { Button } from "@material-ui/core";
+import TextField from '@material-ui/core/TextField';
+import Container from '@material-ui/core/Container';
+
 export default function Login() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
-  const [openSignIn, setOpenSignIn] = useState(null);
-  const history = useHistory();
-  function signIn(event) {
-    event.preventDefault();
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((auth) => {
-        history.push("/profileHome");
-      })
-      .catch((error) => alert(error.message));
-    // setOpenSignIn(false);
-  }
-  //   history.push('/generalHome')
-  //   if(email){
-  //   history.push('/profileHome')}
-  return (
-    <form className="auth-form">
-      <h2>sign In</h2>
-      <label>Email</label>
-      <Input
-        type="text"
-        value={email}
-        placeholder="Your email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <label>Password</label>
-      <Input
-        type="text"
-        value={password}
-        placeholder="Password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      {!user ? (
-        <Button type="submit" onClick={signIn}>
-          Sign In
-        </Button>
-      ) : (
-        <p>{email}</p>
-      )}
-      {/* {!openSignIn? <h5>you are signed in</h5>:<h5>you are Not signed in</h5>} */}
-    </form>
-  );
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const[user, setUser] = useState(null);
+    const[openSignIn, setOpenSignIn] = useState(null)
+    const history =useHistory();
+
+
+
+    useEffect(()=>{
+        const unsubscribe = auth.onAuthStateChanged((authUser)=>{
+            if(authUser){
+                // User is logged into the system
+                console.log(authUser)
+                setUser(authUser)
+
+            }else{
+                // log out user
+                setUser(null)
+            }
+        })
+        return ()=>{
+            unsubscribe()
+        }
+    }, [user, name])
+
+    
+    function signIn(event){
+        event.preventDefault();
+        auth
+        .signInWithEmailAndPassword(email, password)
+        .catch((error) => alert(error.message));
+        setOpenSignIn(false);
+      }
+    //   history.push('/generalHome')
+      if(user){
+      history.push('/profileHome')}
+
+
+    return (
+        <Container maxWidth="sm">
+            <div className="regis">
+            <div className="register">
+                <h2>EDU ONLINE</h2>
+                <p>Sign In</p>
+            </div>
+        <form className="auth-form">
+            
+            
+            <label className="reg-title">Email</label>
+            <TextField id="outlined-basic" label="Your email" type="email" value={email}  onChange={(e)=>setEmail(e.target.value)} variant="outlined" />
+            
+            <label className="reg-title password">Password</label>
+            <TextField id="outlined-password-input" value={password} label="Password" type="password" onChange={(e)=>setPassword(e.target.value)} variant="outlined"/>
+            {!user? (
+                 
+                 <div className="signinbutton"><Button variant="outlined" color="primary"type="submit" onClick={signIn} href="#outlined-buttons" >Sign In</Button></div>
+            ):(
+               <p>{email}</p>
+            )}
+            {/* {!openSignIn? <h5>you are signed in</h5>:<h5>you are Not signed in</h5>} */}
+            
+        </form>
+        </div>
+        </Container>
+    )
 }
