@@ -1,7 +1,6 @@
   
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { useStateValue } from '../../ContextAPI/StateProvider';
-import { db } from "../../Firebase/firebase";
 
 export default function Profile() {
 

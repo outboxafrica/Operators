@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {db, auth} from '../../Firebase/firebase';
+import {db} from '../../Firebase/firebase';
 import ProfileNavBar from '../../Components/ProfileNavBar';
 import './LookBookPage.css'
 
