@@ -102,10 +102,7 @@ function GeneralHomePage() {
           />
           <h3>Dev Night</h3>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam,
-            repellendus quasi. Quisquam, saepe ex consequatur blanditiis est
-            incidunt eius animi hic dignissimos possimus debitis doloribus vitae
-            recusandae. Modi, molestiae commodi Modi, molestiae commodi!
+            Build had soft ware in the night with friends
           </p>
 
           <Button variant="outlined" color="primary">
@@ -119,10 +116,7 @@ function GeneralHomePage() {
           />
           <h3>Get Together</h3>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam,
-            repellendus quasi. Quisquam, saepe ex consequatur blanditiis est
-            incidunt eius animi hic dignissimos possimus debitis doloribus vitae
-            recusandae. Modi, molestiae commodi!
+            share with friends what you have done 
           </p>
 
           <Button variant="outlined" color="primary">
