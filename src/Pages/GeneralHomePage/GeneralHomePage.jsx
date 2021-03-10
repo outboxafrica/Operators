@@ -106,9 +106,9 @@ function GeneralHomePage() {
             has trained so far 1200 students and all these have moved a step further to their goals, with some landing opportunities of a lifetime
           </p>
 
-          <Button variant="outlined" color="primary">
+          {/* <Button size="small" variant="outlined" color="primary">
             Read More
-          </Button>
+          </Button> */}
         </div>
 
         <div className="std-event">
@@ -116,17 +116,14 @@ function GeneralHomePage() {
             className="event-img"
             src="https://images.unsplash.com/photo-1530099486328-e021101a494a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTh8fHN0dWRlbnR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
           />
-          <h3>The </h3>
+          <h3>React Live </h3>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam,
-            repellendus quasi. Quisquam, saepe ex consequatur blanditiis est
-            incidunt eius animi hic dignissimos possimus debitis doloribus vitae
-            recusandae. Modi, molestiae commodi Modi, molestiae commodi!
+            The session introduces learners to react and build real life projects. We start with the basics and move to the complex projects
           </p>
 
-          <Button variant="outlined" color="primary">
+          {/* <Button variant="outlined" color="primary">
             Read More
-          </Button>
+          </Button> */}
         </div>
 
         <div className="std-event">
@@ -139,9 +136,9 @@ function GeneralHomePage() {
             We pair students with mentors to guide them in their career journey. These mentors provide advice (career and general life) to help you achieve your goals 
           </p>
 
-          <Button variant="outlined" color="primary">
+          {/* <Button variant="outlined" color="primary">
             Read More
-          </Button>
+          </Button> */}
         </div>
       </div>
       <Footer />
