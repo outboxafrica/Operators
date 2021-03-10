@@ -14,7 +14,6 @@ import EditProfile from "./Pages/EditProfile/EditProfile";
 
 import "./App.css";
 function App() {
-  const [openSignIn, setOpenSignIn] = useState(null);
   const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {

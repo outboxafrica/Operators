@@ -1,52 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useStateValue } from "../../ContextAPI/StateProvider";
-import { Link } from "react-router-dom";
 import Post from "../../Components/Post";
-import { db, auth } from "../../Firebase/firebase";
-import { useHistory } from "react-router-dom";
+import { db } from "../../Firebase/firebase";
 import ProfileNavBar from "../../Components/ProfileNavBar";
 import "./ProfileHomePage.css";
-import Footer from '../../Components/Footer';
-
-import { makeStyles } from "@material-ui/core/styles";
-import { red } from "@material-ui/core/colors";
-
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 0,
-    paddingTop: "56.25%", // 16:9
-  },
-  expand: {
-    transform: "rotate(0deg)",
-    marginLeft: "auto",
-    transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: "rotate(180deg)",
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
-}));
+import Footer from "../../Components/Footer";
 
 function ProfileHomePage(props) {
-  const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
   const [posts, setPosts] = useState();
   const [{ user }] = useStateValue();
-
-  const history = useHistory();
 
   useEffect(() => {
     db.collection("posts")
@@ -56,12 +18,10 @@ function ProfileHomePage(props) {
           snapshot.docs.map((doc) => ({
             id: doc.id,
             post: doc.data(),
-            // comment2:doc.data(),
           }))
         );
       });
   }, []);
-  // console.log(posts);
 
   return (
     <div className="display">
@@ -80,7 +40,7 @@ function ProfileHomePage(props) {
             ))
           : ""}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -2,24 +2,11 @@ import React from "react";
 import Footer from "../../Components/Footer";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../../ContextAPI/StateProvider";
-import { useHistory } from "react-router-dom";
 import "./GeneralHomePage.css";
 import { Button } from "@material-ui/core";
 function GeneralHomePage() {
   const [{ user }] = useStateValue();
-  const history = useHistory();
-
-  function loginPath(e) {
-    e.preventDefault();
-
-    history.push("/search");
-  }
-  function signUpPath(e) {
-    e.preventDefault();
-
-    history.push("/search");
-  }
-
+  
   return (
     <div>
       <div className="mini-header">
@@ -98,14 +85,11 @@ function GeneralHomePage() {
         <div className="std-event">
           <img
             className="event-img"
-            src="https://images.unsplash.com/photo-1530099486328-e021101a494a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTh8fHN0dWRlbnR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            src="https://images.unsplash.com/photo-1530099486328-e021101a494a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTh8fHN0dWRlbnR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt=""
           />
           <h3>Dev Night</h3>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam,
-            repellendus quasi. Quisquam, saepe ex consequatur blanditiis est
-            incidunt eius animi hic dignissimos possimus debitis doloribus vitae
-            recusandae. Modi, molestiae commodi Modi, molestiae commodi!
+            Night time chalenges to upskill our skills and be the best you can ever be.
           </p>
 
           <Button variant="outlined" color="primary">
@@ -115,14 +99,11 @@ function GeneralHomePage() {
         <div className="std-event">
           <img
             className="event-img"
-            src="https://images.unsplash.com/photo-1599687351724-dfa3c4ff81b1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8c3R1ZGVudHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            src="https://images.unsplash.com/photo-1599687351724-dfa3c4ff81b1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8c3R1ZGVudHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt=""
           />
           <h3>Get Together</h3>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam,
-            repellendus quasi. Quisquam, saepe ex consequatur blanditiis est
-            incidunt eius animi hic dignissimos possimus debitis doloribus vitae
-            recusandae. Modi, molestiae commodi!
+            Lets get to gether to create ideas that support our community to grow
           </p>
 
           <Button variant="outlined" color="primary">
@@ -132,17 +113,7 @@ function GeneralHomePage() {
       </div>
       <Footer />
 
-      {/* <div className="footer">
-        <div className="footer-item">
-          <h4>Find Us Here</h4>
-        </div>
-        <div className="footer-item">
-          <h4>Outbox</h4>
-        </div>
-        <div className="footer-item">
-          <h4>useful links</h4>
-        </div>
-      </div> */}
+     
     </div>
   );
 }

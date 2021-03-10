@@ -13,7 +13,6 @@ function EditProfile(props) {
   const [progress, setProgress] = useState(0);
   const [caption, setCaption] = useState("");
   const [appUsers, setAppUsers] = useState([]);
-  const [username, setUsername] = useState("");
   const [{ user }] = useStateValue();
 
   useEffect(() => {
