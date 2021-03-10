@@ -15,6 +15,7 @@ body{
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.13);
     padding: 17px;
     background-color: aliceblue;
+    width: 100%;
 }
 .header-item{
     flex-grow: 1;
@@ -26,15 +27,7 @@ body{
     padding-right: 90px;
     color: rgb(56, 122, 221); 
 }
-@media screen and (max-width: 700px) {
-    .mini-header{
-        flex-direction: column;
-    }
-    .header-item {
-        padding: 12px;
-        text-align: center;
-    }
-}
+
 
 a{
     text-decoration: none;
@@ -51,11 +44,11 @@ a:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url("https://images.unsplash.com/photo-1610008885395-d4b47c2f5c8c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80") no-repeat center;
+    background: linear-gradient(rgba(53,82,66,.5), rgba(47,80,63,.6)), url("https://images.unsplash.com/photo-1532012197267-da84d127e765?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8Ym9va3N8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60") no-repeat center;
     background-size: cover;
     width: 100%;
     height: 80vh;
-    color: aliceblue;
+    color: white;
    
 }
 .hero-section h1{
@@ -74,23 +67,24 @@ a:hover{
 .all-events {
     display: flex;
     justify-content: space-between;
-    /* padding: 4px 12px; */
-    width: 100%;
-    margin: 10px auto;
+    padding-bottom: 20px;
+    width: 90%;
+    margin: 15px auto;
     flex-wrap: wrap;   
     
 }
 .std-event {
-    flex: 0 45%;
-    height: 670px;
-    margin: 30px;
+    flex: 0 30%;
+    height: 600px;
+    box-shadow: 2px 2px 2px 2px rgb(112, 111, 111);
     border-radius: 7px;
     background-color: white;
     text-align: center;
+    
 }
 .std-event :nth-child(2) {
     padding: 10px;
-    font-size: 2.4rem;
+    font-size: 1.4rem;
     color: rgb(56, 122, 221);
 }
 .std-event :nth-child(3) {
@@ -102,13 +96,55 @@ a:hover{
 .event-img {
     
    width: 100%;
-   height: 400px;
+   height: 380px;
     margin-bottom: 2px;
     border-radius: 7px 7px 0 0;
+    object-fit: cover;
     
 
 }
 .std-event:hover {
     transform: scale(1.03);
     transition: all 1s ease;
+}
+
+@media screen and (max-width: 700px) {
+    .mini-header{
+        flex-direction: column;
+    }
+    .header-item {
+        padding: 12px;
+        text-align: center;
+        flex-grow: unset;
+    }
+    .hero-section{
+        height: 400px;
+    }
+    .hero-section h1{
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    .hero-section span {
+        font-size: 1rem;
+    }
+    .all-events {
+        flex-direction: column;
+        width: 80%;
+        
+        margin: 10px auto;
+        flex-wrap: wrap;   
+        
+    }
+    .event-img {
+        height: 300px;
+    }
+    .std-event{
+        height: 300px;
+        margin-bottom: 13px;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: column;
+    }
+  
 }
