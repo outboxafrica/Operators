@@ -56,7 +56,7 @@
         flex-direction: column;
     }
     .footer-item {
-       flex-basis: 1;
+       flex-basis: 0;
        padding-bottom: 10px;
     }
     

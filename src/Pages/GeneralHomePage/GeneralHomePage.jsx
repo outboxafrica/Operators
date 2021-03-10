@@ -45,7 +45,8 @@ function GeneralHomePage() {
                 <Link to="/sighIn">
                     <Button
                     style={{ margin: "10px"}}
-                    variant="outlined"
+                    variant="contained"
+                    size="small"
                     color="primary"
                     className=""
                     >
@@ -62,7 +63,8 @@ function GeneralHomePage() {
                 <Link to="/register">
                     <Button
                     style={{ margin: "10px" }}
-                    variant="outlined"
+                    variant="contained"
+                    size="small"
                     color="primary"
                     >
                     Sign up
