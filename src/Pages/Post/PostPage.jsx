@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import firebase from "firebase";
 import { useStateValue } from '../../ContextAPI/StateProvider';
-import {Link} from "react-router-dom";
 
-import {Inputs, TextArea} from '../../Components/Inputs';
+import {Inputs} from '../../Components/Inputs';
 import Button from '../../Components/Buttton'
 import { db } from '../../Firebase/firebase';
 import {useHistory} from  "react-router-dom";
 
-import Post from '../../Components/Post'
 import ProfileNavBar from '../../Components/ProfileNavBar';
 import Footer from '../../Components/Footer';
 
