@@ -8,6 +8,9 @@
     background-color: #253c5e;
     padding: 50px 20px;
     display: flex;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
 }
 .ft-container{
