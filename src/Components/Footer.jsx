@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="ft-container">
         <div className="footer-item">
           <h4>About Us</h4>
-          <p>Outbox EDU  is a plaform that enables growth through linking students and facilitator. 
+          <p>Outbox EDU  is a plaform that promotes <br /> career growth through providing <br />coaching and Mentorship. 
              </p>
         </div>
         <div className="footer-item list">

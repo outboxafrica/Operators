@@ -76,7 +76,7 @@ a:hover{
 .std-event {
     flex: 0 30%;
     height: 600px;
-    /* margin: 20px; */
+    box-shadow: 2px 2px 2px 2px rgb(112, 111, 111);
     border-radius: 7px;
     background-color: white;
     text-align: center;
@@ -99,6 +99,7 @@ a:hover{
    height: 380px;
     margin-bottom: 2px;
     border-radius: 7px 7px 0 0;
+    object-fit: cover;
     
 
 }
@@ -114,6 +115,7 @@ a:hover{
     .header-item {
         padding: 12px;
         text-align: center;
+        flex-grow: unset;
     }
     .hero-section{
         height: 400px;
@@ -133,12 +135,16 @@ a:hover{
         flex-wrap: wrap;   
         
     }
+    .event-img {
+        height: 300px;
+    }
     .std-event{
-        height: 400px;
+        height: 300px;
         margin-bottom: 13px;
     }
     .buttons{
         display: flex;
         flex-direction: column;
     }
+  
 }
