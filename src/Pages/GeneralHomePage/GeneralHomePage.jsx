@@ -27,7 +27,6 @@ function GeneralHomePage() {
           <h1>Welcome to OutBox EDU</h1>
           <span>The learning platform during this period</span>
           <div className="buttons">
-                {user.person}
                 {user.person === "null" || typeof user.person == "undefined" ? (
                 <Link to="/sighIn">
                     <Button
@@ -42,7 +41,7 @@ function GeneralHomePage() {
                 </Link>
                 ) : (
                 <Link to="/profileHome">
-                    <Button>Home</Button>
+                    <Button>Login</Button>
                 </Link>
                 )}
 
@@ -103,7 +102,7 @@ function GeneralHomePage() {
         <div className="std-event">
           <img
             className="event-img"
-            src="https://images.unsplash.com/photo-1530099486328-e021101a494a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTh8fHN0dWRlbnR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            src="https://images.unsplash.com/photo-1530099486328-e021101a494a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTh8fHN0dWRlbnR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt=""
           />
           <h3>React Live </h3>
           <p>

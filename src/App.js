@@ -15,6 +15,8 @@ import EditProfile from "./Pages/EditProfile/EditProfile";
 import "./App.css";
 function App() {
   const [{ user }, dispatch] = useStateValue();
+  // const [anonnymous, setAnonnymous] = useState()
+  // setAnonnymous()
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
