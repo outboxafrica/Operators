@@ -1,13 +1,12 @@
 import React from "react";
-import {Link} from "react-router-dom"
-import './Footer.css'
+import { Link } from "react-router-dom";
+import "./Footer.css";
 
 export default function Footer() {
   return (
     <div className="footer">
       <div className="container">
         <div className="row">
-                    
           <div className="footer-col-3">
             <h2>Useful Links</h2>
             <ul>
@@ -17,7 +16,9 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer-col-2">
-            <h2 style={{fontSize: "1.8rem", paddingBottom:"13px"}}>EDU ONLINE</h2>
+            <h2 style={{ fontSize: "1.8rem", paddingBottom: "13px" }}>
+              EDU ONLINE
+            </h2>
             <p>
               Helping developers and technologists write the script of the
               future

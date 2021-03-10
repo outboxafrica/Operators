@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { db, auth } from "../../Firebase/firebase";
+import {  auth } from "../../Firebase/firebase";
 import { useHistory } from "react-router-dom";
 import "./Register.css";
 import { Button } from '@material-ui/core';
@@ -10,7 +10,7 @@ import Container from '@material-ui/core/Container';
 
 
 export default function Login() {
-    const [name, setName] = useState("")
+    const [name] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const[user, setUser] = useState(null);
@@ -70,7 +70,7 @@ export default function Login() {
             ):(
                <p>{email}</p>
             )}
-            {/* {!openSignIn? <h5>you are signed in</h5>:<h5>you are Not signed in</h5>} */}
+           
             
         </form>
         </div>
