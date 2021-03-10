@@ -67,7 +67,7 @@ a:hover{
 .all-events {
     display: flex;
     justify-content: space-between;
-    /* padding: 4px 12px; */
+    padding-bottom: 20px;
     width: 90%;
     margin: 15px auto;
     flex-wrap: wrap;   

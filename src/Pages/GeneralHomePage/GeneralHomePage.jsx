@@ -90,7 +90,7 @@ function GeneralHomePage() {
           textAlign: "center",
           color: "rgb(56, 122, 221)",
           fontSize: "1.8rem",
-          padding: "15px"
+          padding: "25px"
         }}
       >
         Upcoming events
