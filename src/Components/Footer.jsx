@@ -13,9 +13,9 @@ export default function Footer() {
         </div>
         <div className="footer-item list">
           <h4>Quick Links</h4>
-          <Link>Join Us</Link>
-          <Link>The team</Link>
-          <Link>Become a facilitator</Link>
+          <Link to="/register">Join Us</Link>
+          <Link to="/lookBook">The team</Link>
+          <Link to="/register">Become a facilitator</Link>
         </div>
         <div className="footer-item">
           <h4>Conatct us</h4>
