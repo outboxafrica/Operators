@@ -10,7 +10,7 @@ import Container from '@material-ui/core/Container';
 
 
 export default function Login() {
-    const [name, setName] = useState("")
+    const [name] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const[user, setUser] = useState(null);

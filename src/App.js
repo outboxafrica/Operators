@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { db, auth } from "./Firebase/firebase";
+import React, { useEffect } from "react";
+import { auth } from "./Firebase/firebase";
 import { useStateValue } from "./ContextAPI/StateProvider";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Register from "./Pages/Register/Register";
