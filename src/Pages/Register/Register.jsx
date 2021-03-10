@@ -1,27 +1,27 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { db, auth } from "../../Firebase/firebase";
 import firebase from "firebase";
 
 import "./Register.css";
-import { Button, Input } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import {useHistory} from "react-router-dom";
+import TextField from '@material-ui/core/TextField';
+import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
+import Container from '@material-ui/core/Container';
 
-import Select from '@material-ui/core/Select';
+
 
 
 
 export default function Login() {
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [student, setStudent] = useState("");
-    const [facilitator, setFacilitator] = useState("")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [student, setStudent] = useState("");
+  const [facilitator, setFacilitator] = useState("");
 
-    const[user, setUser] = useState(null);
-    const history =useHistory();
-
-    // const[openSignIn, setOpenSignIn] = useState(null);
-
+  const [user, setUser] = useState(null);
+  const history = useHistory();
 
     useEffect(()=>{
         const logOut = auth.onAuthStateChanged((authUser)=>{
@@ -29,9 +29,7 @@ export default function Login() {
                 // User is logged into the system
                 console.log('AUTH_REGISTER '+ authUser)
                 setUser(authUser)
-                // setName("")
-                // setEmail("")
-                // setPassword("")
+                
             }else{
                 // log out user
                 setUser(null)
@@ -64,34 +62,57 @@ export default function Login() {
         
         // history.push('/search')
     }
-    if(user){
-    history.push('/profileHome')}
-    
+    if (user) {
+    window.location.reload();
+    history.push("/sighIn");
+  }
 
+    
+    
     return (
+        <Container maxWidth="sm">
+            <div className="regis">
+            
+            <div className="register">
+                <h2>EDU ONLINE</h2>
+                <p>Register</p>
+            </div>
+            <div className="reg-icon">
+            <PeopleAltIcon className="icon" style={{ fontSize: 70 }} />
+            </div>
         <form className="auth-form">
-            <h2>register</h2>
-            <label>Username</label>
-            <Input type="text" value={name} placeholder="Username" onChange={(e)=>setName(e.target.value)} />
             
-            <label>Email</label>
-            <Input type="text" value={email} placeholder="Your email" onChange={(e)=>setEmail(e.target.value)} />
+            <label className="reg-title">Username </label>
+
+            <TextField id="outlined-basic" label="username" type="text" value={name}  onChange={(e)=>setName(e.target.value)} variant="outlined" />
+
             
-            <label>Password</label>
-            <Input type="text" value={password} placeholder="Password" onChange={(e)=>setPassword(e.target.value)} />
+            <label className="reg-title">Email</label>
+            <TextField id="outlined-basic" label="Your email" type="email" value={email}  onChange={(e)=>setEmail(e.target.value)} variant="outlined" />
+
             
-            <label>Role</label>
+            <label className="reg-title">Password</label>
+            <TextField id="outlined-password-input" value={password} label="Password" type="password" onChange={(e)=>setPassword(e.target.value)} variant="outlined"/>
             
+            <label className="reg-title" >Role</label>
+            
+            
+            <div className="radio">
             <input type="radio"  value="Student" onClick={(e)=>setStudent(e.target.value)}/>
-            <label >Student</label><br/>
+            <label className="">Student</label><br/>
             <input type="radio" value="Student"  onClick={(e)=>setFacilitator(e.target.value)}/>
-            <label >Facilitator</label><br/>  
+            <label className="">Facilitator</label><br/>  
+            </div>
             {user? (
                 <Button type="submit" onClick={()=>auth.signOut()}>Logout</Button>
             ):(
-                <Button type="submit" onClick={signUp}>SignUp</Button>
+                
+                <Button variant="outlined" color="primary"type="submit" onClick={signUp}  >SignUp</Button>
+
             )}
             
         </form>
+        </div>
+        </Container>
     )
 }
