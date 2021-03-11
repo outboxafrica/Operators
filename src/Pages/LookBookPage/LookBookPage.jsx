@@ -53,26 +53,29 @@ function LookBookPage() {
         })
        },[]);
     return (
-        <div className="display">
+        <div className="display" style={{display:"flex", flexDirection:"column",justifyContent:"center", margin:"auto"}}>
             <ProfileNavBar/>
-            <div className="contents">
-            <h1>lookbook</h1>
+            <div className="contents" >
+            <h1 style={{color:"#5F9EA0", textAlign:"center", margin:"2rem", fontSize:"3rem",fontWeight:"bold"}}>lookbook</h1>
+            <hr style={{color:"blue", margin:"0 0.5rem"}}/>
         <div className="items">
       {
         appUsers.map(({id, post}) =>(
           <div key={id}  className="card">
-              <Card className={classes.root}>
-      <CardActionArea>
+              <Card className={classes.root} style={{display:"flex", flexDirection:"column", justifyContent:"center",margin:"0 auto"}}>
+      <CardActionArea style={{minHeight:"2rem", boxShadow:"1px 1px 5px", background:"#5F9EA0"}}>
         <CardMedia
+        style={{margin:"5px", boxShadow:"1px 1px 5px"}}
           className={classes.media}
           image={bio.imageUrl}
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h5" component="h2" style={{textAlign:"center",color:"#AFEEEE",padding:"1rem"}}>
           {post.name}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <hr />
+          <Typography variant="body2" color="textSecondary" style={{padding:"5px",color:"#ddd", textAlign:"center"}} component="p">
             This is an Edu Online 
             Look Book 
           </Typography>
@@ -82,6 +85,7 @@ function LookBookPage() {
         <Button size="small" color="primary">
         {post.email}
         </Button>
+        <p>-</p>
         <Button size="small" color="primary">
         {post.facilitator}
         {post.student}
