@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {db} from '../../Firebase/firebase';
 import ProfileNavBar from '../../Components/ProfileNavBar';
 import './LookBookPage.css'
@@ -28,7 +28,8 @@ function LookBookPage() {
     const[appUsers,setAppUsers] = useState([]);
     const[bio,setBio] = useState([]);
     const classes = useStyles();
-
+    
+    const stableDispatch = useCallback() //assuming that it doesn't need to change
     useEffect(()=>{
         db.collection('AppUsers').orderBy('timestamp','desc').onSnapshot(snapshot =>{
           //it listens for any new post added
@@ -51,27 +52,29 @@ function LookBookPage() {
             post:doc.data()
            })));
         })
-       },[]);
+       },[stableDispatch]);
     return (
         <div className="display" style={{display:"flex", flexDirection:"column",justifyContent:"center", margin:"auto"}}>
             <ProfileNavBar/>
             <div className="contents" >
-            <h1 style={{color:"#5F9EA0", textAlign:"center", margin:"2rem", fontSize:"3rem",fontWeight:"bold"}}>lookbook</h1>
+            <h1 style={{color:"#3F51B5", textAlign:"center", margin:"2rem", fontSize:"3rem",fontWeight:"bold"}}>lookbook</h1>
             <hr style={{color:"blue", margin:"0 0.5rem"}}/>
         <div className="items">
       {
         appUsers.map(({id, post}) =>(
           <div key={id}  className="card">
               <Card className={classes.root} style={{display:"flex", flexDirection:"column", justifyContent:"center",margin:"0 auto"}}>
-      <CardActionArea style={{minHeight:"2rem", boxShadow:"1px 1px 5px", background:"#5F9EA0"}}>
+      <CardActionArea style={{minHeight:"2rem",  background:"white"}}>
         <CardMedia
-        style={{margin:"5px", boxShadow:"1px 1px 5px"}}
+        // style={{margin:"5px"}}
           className={classes.media}
           image={bio.imageUrl}
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" style={{textAlign:"center",color:"#AFEEEE",padding:"1rem"}}>
+          <Typography gutterBottom variant="h5" component="h2" 
+          // style={{textAlign:"center"}}
+          >
           {post.name}
           </Typography>
           <hr />
