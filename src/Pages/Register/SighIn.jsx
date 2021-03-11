@@ -58,7 +58,7 @@ export default function Login() {
             </div>
         <form className="auth-form">
             
-            
+            {openSignIn}
             <label className="reg-title">Email</label>
             <TextField id="outlined-basic" label="Your email" type="email" value={email}  onChange={(e)=>setEmail(e.target.value)} variant="outlined" />
             
