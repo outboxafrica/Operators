@@ -1,0 +1,20 @@
+
+textarea{
+    border-radius: 5px;
+}
+
+
+ textarea:focus{
+    outline: none;
+    border: 1px solid #8395ff ;
+    box-shadow: 1px 1px 5px #8395ff;
+}
+
+@media screen and (max-width:600px){
+    textarea{
+        max-width: 10rem;
+    }
+    input{
+        max-width: 20rem;
+    }
+}

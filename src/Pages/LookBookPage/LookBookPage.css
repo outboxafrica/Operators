@@ -6,21 +6,10 @@
 
 .items{
     margin:3rem 0 ;
-    display: grid;
-    grid-template-columns: 18rem 18rem 18rem 18rem 18rem;
-    grid-gap: 15px;
-    /* justify-content: center; */
-    /* flex-wrap: wrap; */
-    /* align-items: center; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
     width: 100%;
-    /* text-align: center; */
 }
 
-@media screen and (max-width:600px){
-    .items{
-        margin:2rem 0 ;
-        display: grid;
-        grid-template-columns: 18rem  ;
-        /* grid-gap: 10px; */
-    }
-}
