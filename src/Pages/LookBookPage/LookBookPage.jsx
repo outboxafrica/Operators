@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {db} from '../../Firebase/firebase';
 import ProfileNavBar from '../../Components/ProfileNavBar';
 import './LookBookPage.css'
@@ -29,8 +29,7 @@ function LookBookPage() {
     const[bio,setBio] = useState([]);
     const classes = useStyles();
     
-    const stableDispatch = useCallback() //assuming that it doesn't need to change
-    useEffect(()=>{
+      useEffect(()=>{
         db.collection('AppUsers').orderBy('timestamp','desc').onSnapshot(snapshot =>{
           //it listens for any new post added
           setAppUsers(snapshot.docs.map(doc => ({
@@ -52,7 +51,7 @@ function LookBookPage() {
             post:doc.data()
            })));
         })
-       },[stableDispatch]);
+       },[appUsers]);
     return (
         <div className="display" style={{display:"flex", flexDirection:"column",justifyContent:"center", margin:"auto"}}>
             <ProfileNavBar/>
