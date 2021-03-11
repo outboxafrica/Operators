@@ -128,9 +128,6 @@ function GeneralHomePage() {
             We pair students with mentors to guide them in their career journey. These mentors provide advice (career and general life) to help you achieve your goals 
           </p>
 
-          {/* <Button variant="outlined" color="primary">
-            Read More
-          </Button> */}
         </div>
       </div>
       <Footer />
