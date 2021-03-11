@@ -41,7 +41,13 @@ function GeneralHomePage() {
                 </Link>
                 ) : (
                 <Link to="/profileHome">
-                    <Button>Login</Button>
+                    <Button
+                    style={{ margin: "10px"}}
+                    variant="contained"
+                    size="small"
+                    color="primary"
+                    className="">
+                      Login AGAIN</Button>
                 </Link>
                 )}
 
@@ -94,9 +100,7 @@ function GeneralHomePage() {
             has trained so far 1200 students and all these have moved a step further to their goals, with some landing opportunities of a lifetime
           </p>
 
-          {/* <Button size="small" variant="outlined" color="primary">
-            Read More
-          </Button> */}
+         
         </div>
 
         <div className="std-event">

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {  useEffect } from "react";
 import { auth } from "./Firebase/firebase";
 import { useStateValue } from "./ContextAPI/StateProvider";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -15,8 +15,6 @@ import EditProfile from "./Pages/EditProfile/EditProfile";
 import "./App.css";
 function App() {
   const [{ user }, dispatch] = useStateValue();
-  // const [anonnymous, setAnonnymous] = useState()
-  // setAnonnymous()
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
