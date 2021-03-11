@@ -51,7 +51,7 @@ function LookBookPage() {
             post:doc.data()
            })));
         })
-       },[]);
+       },[appUsers]);
     return (
         <div className="display">
             <ProfileNavBar/>

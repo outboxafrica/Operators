@@ -22,7 +22,7 @@ useEffect(() => {
     setperson(user)
     console.log(user);
   }  
-}, [])
+}, [user])
 function postApost(event) {
   event.preventDefault();
   db.collection("posts").add({

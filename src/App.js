@@ -32,7 +32,7 @@ function App() {
     return () => {
       unsubscribe();
     };
-  }, []);
+  }, [dispatch]);
 
   console.log("User is >>>>", user);
 
