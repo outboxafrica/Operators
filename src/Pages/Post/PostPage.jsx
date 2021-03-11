@@ -9,6 +9,7 @@ import {useHistory} from  "react-router-dom";
 
 import ProfileNavBar from '../../Components/ProfileNavBar';
 import Footer from '../../Components/Footer';
+import "./PostPage.css"
 
 
 function PostPage() {
@@ -39,7 +40,7 @@ function postApost(event) {
     return (
         <div className="display">
           <ProfileNavBar/>
-          <div className="content">
+          <div className="content height">
           <h3>Posts</h3>
         <form >
         
