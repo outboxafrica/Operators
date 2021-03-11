@@ -8,7 +8,6 @@ import { useHistory } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
 import Container from "@material-ui/core/Container";
-import { Redirect } from "react-router-dom";
 
 export default function Login() {
   const [name, setName] = useState("");

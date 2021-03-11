@@ -51,6 +51,7 @@ export default function Login() {
 
     return (
         <Container maxWidth="sm">
+            {openSignIn}
             <div className="regis">
             <div className="register">
                 <h2>EDU ONLINE</h2>
