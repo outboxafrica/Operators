@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import firebase from "firebase";
 import { useStateValue } from '../../ContextAPI/StateProvider';
 
@@ -17,13 +17,13 @@ function PostPage() {
   const [person, setperson] = useState("");
   const [{ user}] = useStateValue();
   const history =useHistory();
-  const stableDispatch = useCallback() //assuming that it doesn't need to change
+  
 useEffect(() => {
   if(typeof user != "undefined"){
     setperson(user)
     console.log(user);
   }  
-}, [stableDispatch])
+}, [user])
 function postApost(event) {
   event.preventDefault();
   db.collection("posts").add({
