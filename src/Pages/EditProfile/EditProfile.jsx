@@ -73,20 +73,21 @@ function EditProfile(props) {
   };
 
   return (
-    <div className="display">
+    <div className="display"  style={{background:"#fff",border:"1p solid", boxShadow:"1px 1px 7px "}}>
       <ProfileNavBar />
-      <div className="content">
-        <h4>Edit profile</h4>
+      <div className="content" >
+        <h4 style={{fontSize:"2rem",color:"",marginBottom:"2rem", padding:"1rem", boxShadow:"1px 1px 7px "}} >EDIT PROFILE</h4>
+        <p style={{color:"#444", textAlign:"left", width:"40%", margin:"0 auto",padding:"1rem", fontSize:"1.8rem"}}>Bio_</p>
         <TextArea
           type="text"
-          label="Bio"
-          placeholder="Enter Bio Data..."
+          // label="Bio"
+          placeholder="Write something about yourself"
           value={caption}
           onChange={(event) => setCaption(event.target.value)}
           // value={props.value}
           // onChange={props.onChange}
           rows="5"
-          cols="50"
+          cols="82"
         />
         <progress
           className="imageupload_progress"
@@ -94,7 +95,7 @@ function EditProfile(props) {
           max="100"
         ></progress>
         <p></p>
-        <input type="file" onChange={handleChange} />
+        <input type="file" style={{margin:"2rem" , color:"#fff", fontSize:"1.2rem", fontWeight:"bolder"}}  onChange={handleChange} />
         <p></p>
         <Button variant="contained" color="primary" onClick={handleUpload}>
           Upload
