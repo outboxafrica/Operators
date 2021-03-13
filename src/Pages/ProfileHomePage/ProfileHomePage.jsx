@@ -26,8 +26,9 @@ function ProfileHomePage(props) {
   return (
     <div className="display">
       <ProfileNavBar profile={user.person} />
-      <div className="content">
-        <h3>All Posts</h3>
+        <h1 className="title">All Posts</h1>
+        <hr/>
+      <div className=" horizontal">
         {console.log(posts)}
         {typeof posts != "undefined"
           ? posts.map(({ id, post }) => (

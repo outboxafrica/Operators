@@ -89,9 +89,9 @@ function Post(props) {
   }
   
   return (
-    <div className="content">
-      <div className="Post content">
-        <Card className={classes.root}>
+    <div className="post_card ">
+      <div className="Post content ">
+        <Card className={classes.root} >
           <CardHeader
             avatar={
               <Avatar aria-label="recipe" className={classes.avatar}>
