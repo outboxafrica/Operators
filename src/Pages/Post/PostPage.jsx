@@ -32,8 +32,6 @@ function postApost(event) {
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
   });
   setApost('');
-  console.log(apost);
-  // setPostBody("");
   history.push('/profileHome')
 }
 
