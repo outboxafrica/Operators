@@ -52,13 +52,10 @@ export default function Login() {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       })
       .catch((error) => alert(error.message));
-
-    // history.push('/search')
   };
   if (user) {
-      history.push("/profileHome");
-      window.location.reload();
-    // return <Redirect to="/sighIn" />
+    history.push("/profileHome");
+    window.location.reload();
   }
 
   return (
@@ -115,7 +112,7 @@ export default function Login() {
             <br />
             <input
               type="radio"
-              value="Student"
+              value="Facilitator"
               onClick={(e) => setFacilitator(e.target.value)}
             />
             <label className="">Facilitator</label>

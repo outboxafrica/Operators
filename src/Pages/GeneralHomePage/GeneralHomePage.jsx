@@ -47,7 +47,7 @@ function GeneralHomePage() {
                     size="small"
                     color="primary"
                     className="">
-                      Login AGAIN</Button>
+                    LOGIN HERE  {user.person}</Button>
                 </Link>
                 )}
 
@@ -69,7 +69,7 @@ function GeneralHomePage() {
                     variant="contained"
                     color="primary"
                     >
-                    Sign up
+                    WELCOME
                     </Button>
                 </Link>
                 )}
