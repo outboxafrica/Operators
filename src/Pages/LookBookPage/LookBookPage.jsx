@@ -65,14 +65,12 @@ function LookBookPage() {
               <Card className={classes.root} style={{display:"flex", flexDirection:"column", justifyContent:"center",margin:"0 auto"}}>
       <CardActionArea style={{minHeight:"2rem",  background:"white"}}>
         <CardMedia
-        // style={{margin:"5px"}}
           className={classes.media}
           image={bio.imageUrl}
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2" 
-          // style={{textAlign:"center"}}
           >
           {post.name}
           </Typography>

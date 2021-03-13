@@ -13,7 +13,7 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-import {  auth } from "../Firebase/firebase";
+import { auth } from "../Firebase/firebase";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
