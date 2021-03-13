@@ -26,7 +26,7 @@ function ProfileHomePage(props) {
   return (
     <div className="display">
       <ProfileNavBar profile={user.person} />
-        <h1 className="title">All Posts</h1>
+        <h2 className="title">All Posts</h2>
         <hr/>
       <div className=" horizontal">
         {console.log(posts)}
