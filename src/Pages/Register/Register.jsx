@@ -56,7 +56,7 @@ export default function Login() {
     // history.push('/search')
   };
   if (user) {
-      history.push("/sighIn");
+      history.push("/");
       window.location.reload();
     // return <Redirect to="/sighIn" />
   }
